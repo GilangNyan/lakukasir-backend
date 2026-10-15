@@ -12,7 +12,7 @@ import { UsersService } from './users.service.js';
 import { CurrentUser } from '../../common/decorators/current-user.decorator.js';
 import type { UserPayload } from '../../common/interfaces/request-with-user.interface.js';
 import { CreateUserDto } from './dto/create-user.dto.js';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard.js';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard.js';
 
 @Controller('users')
 @UseGuards(JwtAuthGuard)
