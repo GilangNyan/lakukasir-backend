@@ -13,7 +13,7 @@ import {
   HeaderResolver,
   I18nModule,
 } from 'nestjs-i18n';
-import path from 'path';
+import * as path from 'path';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -42,8 +42,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     I18nModule.forRoot({
       fallbackLanguage: 'en',
       loaderOptions: {
-        path: path.join(__dirname, '/i18n/'),
-        watch: true,
+        path: path.join(import.meta.dirname, 'i18n'),
+        watch: process.env.NODE_ENV !== 'production',
       },
       resolvers: [
         new HeaderResolver(['x-custom-lang']), // Opsi header kustom jika ada
