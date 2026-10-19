@@ -8,6 +8,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import appConfig from './config/app.config.js';
 import databaseConfig from './config/database.config.js';
+import {
+  AcceptLanguageResolver,
+  HeaderResolver,
+  I18nModule,
+} from 'nestjs-i18n';
+import path from 'path';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -32,6 +38,17 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
         ...configService.get('database'),
         autoLoadEntities: true,
       }),
+    }),
+    I18nModule.forRoot({
+      fallbackLanguage: 'en',
+      loaderOptions: {
+        path: path.join(__dirname, '/i18n/'),
+        watch: true,
+      },
+      resolvers: [
+        new HeaderResolver(['x-custom-lang']), // Opsi header kustom jika ada
+        AcceptLanguageResolver, // Membaca header standar Accept-Language
+      ],
     }),
     UsersModule,
     AuthModule,

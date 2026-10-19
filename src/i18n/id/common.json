@@ -1,0 +1,6 @@
+{
+  "WELCOME": "Selamat datang di SaaS Kasir",
+  "PRODUCT_NOT_FOUND": "Produk dengan ID {id} tidak ditemukan",
+  "UNAUTHORIZED": "Kredensial tidak valid",
+  "SESSION_EXPIRED": "Sesi telah berakhir"
+}
