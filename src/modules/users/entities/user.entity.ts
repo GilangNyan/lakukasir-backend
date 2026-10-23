@@ -1,5 +1,6 @@
-import { Column, Entity, Index } from 'typeorm';
+import { Column, Entity, Index, OneToMany } from 'typeorm';
 import { BaseEntity } from '../../../database/base.entity.js';
+import { StoreUser } from '../../stores/entities/store-user.entity.js';
 
 @Entity('users')
 @Index('idx_users_email_unique', ['email'], {
@@ -28,4 +29,7 @@ export class User extends BaseEntity {
 
   @Column({ name: 'is_active', type: 'boolean', default: true })
   isActive: boolean;
+
+  @OneToMany(() => StoreUser, (storeUser) => storeUser.user)
+  storeUsers: StoreUser[];
 }
