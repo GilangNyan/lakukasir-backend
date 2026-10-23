@@ -17,6 +17,11 @@ import * as path from 'path';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
+const i18nPath =
+  process.env.NODE_ENV === 'production'
+    ? path.join(import.meta.dirname, 'i18n')
+    : path.join(process.cwd(), 'src', 'i18n');
+
 @Module({
   imports: [
     // Distributed tracing, auto-correlated logs, request/job metrics, error
@@ -42,7 +47,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     I18nModule.forRoot({
       fallbackLanguage: 'en',
       loaderOptions: {
-        path: path.join(import.meta.dirname, 'i18n'),
+        path: i18nPath,
         watch: process.env.NODE_ENV !== 'production',
       },
       resolvers: [
