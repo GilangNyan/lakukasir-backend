@@ -1,6 +1,7 @@
 {
   "EMAIL": "Email",
   "PHONE": "Phone Number",
+  "IDENTIFIER": "Email or Phone Number",
   "FULL_NAME": "Full Name",
   "PASSWORD": "Password"
 }

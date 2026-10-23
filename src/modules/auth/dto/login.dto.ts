@@ -1,24 +1,28 @@
 import { IsNotEmpty, IsString, MinLength } from 'class-validator';
-import { t } from '../../../utils/i18n.util.js';
+import { t, validationMessage } from '../../../utils/i18n.util.js';
 
 export class LoginDto {
-  @IsString()
+  @IsString({
+    message: validationMessage('validation.STRING', () => ({
+      args: { field: t('field.IDENTIFIER') },
+    })),
+  })
   @IsNotEmpty({
-    message: t('validation.REQUIRED', {
-      args: {
-        field: t('common.A_OR_B', {
-          args: { a: t('field.EMAIL'), b: 'field.PHONE' },
-        }),
-      },
-    }),
+    message: validationMessage('validation.REQUIRED', () => ({
+      args: { field: t('field.IDENTIFIER') },
+    })),
   })
   identifier: string;
 
-  @IsString()
+  @IsString({
+    message: validationMessage('validation.STRING', () => ({
+      args: { field: t('field.PASSWORD') },
+    })),
+  })
   @MinLength(6, {
-    message: t('validation.MIN_LENGTH', {
+    message: validationMessage('validation.MIN_LENGTH', () => ({
       args: { field: t('field.PASSWORD'), min: 6 },
-    }),
+    })),
   })
   password: string;
 }

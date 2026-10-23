@@ -1,6 +1,7 @@
 {
     "EMAIL": "Email",
     "PHONE": "Nomor Telepon",
+    "IDENTIFIER": "Email atau Nomor Telepon",
     "FULL_NAME": "Nama Lengkap",
     "PASSWORD": "Password"
 }

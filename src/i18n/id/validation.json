@@ -1,5 +1,6 @@
 {
   "REQUIRED": "{field} harus diisi",
+  "STRING": "{field} harus berupa teks",
   "MIN_LENGTH": "{field} harus terdiri dari minimal {min} karakter",
   "MAX_LENGTH": "{field} harus terdiri dari maksimal{max} karakter",
   "FORMAT_INVALID": "Format {field} tidak valid",

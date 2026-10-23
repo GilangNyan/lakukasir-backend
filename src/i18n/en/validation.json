@@ -1,5 +1,6 @@
 {
   "REQUIRED": "{field} cannot be empty",
+  "STRING": "{field} must be a string",
   "MIN_LENGTH": "{field} must be at least {min} characters long",
   "MAX_LENGTH": "{field} must be at most {max} characters long",
   "FORMAT_INVALID": "{field} format is invalid",
