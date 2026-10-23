@@ -1,6 +1,14 @@
-import { I18nContext, I18nTranslation, Path, TranslateOptions } from 'nestjs-i18n';
+import {
+  I18nContext,
+  I18nTranslation,
+  Path,
+  TranslateOptions,
+} from 'nestjs-i18n';
 
-export function translate(key: Path<I18nTranslation>, options?: TranslateOptions): string {
+export function translate(
+  key: Path<I18nTranslation>,
+  options?: TranslateOptions,
+): string {
   const i18n = I18nContext.current();
 
   if (!i18n) {
