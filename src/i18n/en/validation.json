@@ -1,0 +1,7 @@
+{
+  "REQUIRED": "{field} cannot be empty",
+  "MIN_LENGTH": "{field} must be at least {min} characters long",
+  "MAX_LENGTH": "{field} must be at most {max} characters long",
+  "FORMAT_INVALID": "{field} format is invalid",
+  "REQUIRED_IF_OTHER_EMPTY": "{field} is required if {field2} is empty"
+}

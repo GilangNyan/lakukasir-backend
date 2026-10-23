@@ -1,0 +1,7 @@
+{
+  "REQUIRED": "{field} harus diisi",
+  "MIN_LENGTH": "{field} harus terdiri dari minimal {min} karakter",
+  "MAX_LENGTH": "{field} harus terdiri dari maksimal{max} karakter",
+  "FORMAT_INVALID": "Format {field} tidak valid",
+  "REQUIRED_IF_OTHER_EMPTY": "{field} harus diisi jika {field2} kosong"
+}

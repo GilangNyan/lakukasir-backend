@@ -2,5 +2,6 @@
   "WELCOME": "Welcome to SaaS Kasir",
   "PRODUCT_NOT_FOUND": "Product with ID {id} was not found",
   "UNAUTHORIZED": "Invalid credentials",
-  "SESSION_EXPIRED": "Session expired"
+  "SESSION_EXPIRED": "Session expired",
+  "A_OR_B": "{a} or {b}"
 }
