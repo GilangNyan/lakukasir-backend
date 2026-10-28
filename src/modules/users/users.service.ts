@@ -11,6 +11,7 @@ import { CreateUserDto } from './dto/create-user.dto.js';
 import { normalizePhoneNumber } from '../../utils/phone-normalizer.util.js';
 import { hashPassword } from '../../utils/credential.util.js';
 import { UpdateUserDto } from './dto/update-user.dto.js';
+import { t } from '../../utils/i18n.util.js';
 
 @Injectable()
 export class UsersService {
@@ -23,7 +24,10 @@ export class UsersService {
     const user = await this.userRepository.findOne({
       where: { id, isActive: true },
     });
-    if (!user) throw new NotFoundException('User tidak ditemukan');
+    if (!user)
+      throw new NotFoundException(
+        t('NOT_FOUND', { args: { item: t('field.USER') } }),
+      );
     return user;
   }
 
@@ -56,7 +60,9 @@ export class UsersService {
 
     if (!email && !phone) {
       throw new BadRequestException(
-        'Minimal harus menyediakan Email atau Nomor Telepon',
+        t('PLEASE_PROVIDE_AT_LEAST', {
+          args: { a: t('field.PHONE'), b: t('field.EMAIL') },
+        }),
       );
     }
 
@@ -64,13 +70,18 @@ export class UsersService {
 
     if (email) {
       const existingEmail = await this.findByEmail(email);
-      if (existingEmail) throw new ConflictException('Email sudah digunakan');
+      if (existingEmail)
+        throw new ConflictException(
+          t('NOT_FOUND', { args: { item: t('field.EMAIL') } }),
+        );
     }
 
     if (normalizedPhone) {
       const existingPhone = await this.findByPhone(normalizedPhone);
       if (existingPhone)
-        throw new ConflictException('Nomor telepon sudah digunakan');
+        throw new ConflictException(
+          t('NOT_FOUND', { args: { item: t('field.PHONE') } }),
+        );
     }
 
     let passwordHash: string | undefined = undefined;

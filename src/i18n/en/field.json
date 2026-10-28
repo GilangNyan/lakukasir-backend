@@ -3,5 +3,11 @@
   "PHONE": "Phone Number",
   "IDENTIFIER": "Email or Phone Number",
   "FULL_NAME": "Full Name",
-  "PASSWORD": "Password"
+  "PASSWORD": "Password",
+  "ROLE": "Role",
+  "PERMISSION": "Permission",
+  "USER": "User",
+  "NAME": "Name",
+  "DESCRIPTION": "Description",
+  "CHANNEL": "Channel"
 }

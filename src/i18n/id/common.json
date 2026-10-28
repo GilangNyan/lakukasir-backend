@@ -3,5 +3,8 @@
   "PRODUCT_NOT_FOUND": "Produk dengan ID {id} tidak ditemukan",
   "UNAUTHORIZED": "Kredensial tidak valid",
   "SESSION_EXPIRED": "Sesi telah berakhir",
-  "A_OR_B": "{a} atau {b}"
+  "A_OR_B": "{a} atau {b}",
+  "NOT_FOUND": "{item} tidak ditemukan",
+  "ALREADY_USED": "{item} sudah digunakan",
+  "PLEASE_PROVIDE_AT_LEAST": "Setidaknya harus menyediakan {a} atau {b}"
 }

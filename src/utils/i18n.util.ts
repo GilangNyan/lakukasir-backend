@@ -21,9 +21,7 @@ export function translate(
 
 export function validationMessage(
   key: Path<I18nTranslation>,
-  options?:
-    | TranslateOptions
-    | (() => TranslateOptions),
+  options?: TranslateOptions | (() => TranslateOptions),
 ): (args: ValidationArguments) => string {
   return () => {
     const i18n = I18nContext.current();
@@ -32,10 +30,7 @@ export function validationMessage(
       return key;
     }
 
-    return i18n.t(
-      key,
-      typeof options === 'function' ? options() : options,
-    );
+    return i18n.t(key, typeof options === 'function' ? options() : options);
   };
 }
 

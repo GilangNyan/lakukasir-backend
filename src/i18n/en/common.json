@@ -3,5 +3,8 @@
   "PRODUCT_NOT_FOUND": "Product with ID {id} was not found",
   "UNAUTHORIZED": "Invalid credentials",
   "SESSION_EXPIRED": "Session expired",
-  "A_OR_B": "{a} or {b}"
+  "A_OR_B": "{a} or {b}",
+  "NOT_FOUND": "{item} is not found",
+  "ALREADY_USED": "{item} is already used",
+  "PLEASE_PROVIDE_AT_LEAST": "Please provide at least {a} or {b}"
 }

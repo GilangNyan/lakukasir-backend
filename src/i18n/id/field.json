@@ -1,7 +1,13 @@
 {
-    "EMAIL": "Email",
-    "PHONE": "Nomor Telepon",
-    "IDENTIFIER": "Email atau Nomor Telepon",
-    "FULL_NAME": "Nama Lengkap",
-    "PASSWORD": "Password"
+  "EMAIL": "Email",
+  "PHONE": "Nomor Telepon",
+  "IDENTIFIER": "Email atau Nomor Telepon",
+  "FULL_NAME": "Nama Lengkap",
+  "PASSWORD": "Password",
+  "ROLE": "Peran",
+  "PERMISSION": "Permission",
+  "USER": "Pengguna",
+  "NAME": "Nama",
+  "DESCRIPTION": "Deskripsi",
+  "CHANNEL": "Channel"
 }
