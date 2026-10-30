@@ -1,5 +1,4 @@
 import {
-  BaseEntity,
   Column,
   Entity,
   Index,
@@ -7,6 +6,8 @@ import {
   ManyToOne,
   Unique,
 } from 'typeorm';
+import type { Relation } from 'typeorm';
+import { BaseEntity } from '../../../database/base.entity.js';
 import { Role } from './role.entity.js';
 import { Permission } from './permission.entity.js';
 
@@ -21,7 +22,7 @@ export class RolePermission extends BaseEntity {
     onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'role_id' })
-  role: Role;
+  role: Relation<Role>;
 
   @Column({ name: 'permission_id', type: 'uuid' })
   permissionId: string;
@@ -30,5 +31,5 @@ export class RolePermission extends BaseEntity {
     onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'permission_id' })
-  permission: Permission;
+  permission: Relation<Permission>;
 }

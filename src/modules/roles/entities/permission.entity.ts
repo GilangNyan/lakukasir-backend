@@ -1,6 +1,8 @@
-import { BaseEntity, Column, Entity, OneToMany, Unique } from 'typeorm';
+import { Column, Entity, OneToMany, Unique } from 'typeorm';
+import type { Relation } from 'typeorm';
+import { BaseEntity } from '../../../database/base.entity.js';
 import { RolePermission } from './role-permission.entity.js';
-import { Channel } from '../enums/channel.enum.js';
+import { Channel } from '../../../common/enums/channel.enum.js';
 
 @Entity('permissions')
 @Unique(['name', 'channel'])
@@ -15,5 +17,5 @@ export class Permission extends BaseEntity {
     () => RolePermission,
     (rolePermission) => rolePermission.permission,
   )
-  rolePermissions: RolePermission[];
+  rolePermissions: Relation<RolePermission[]>;
 }

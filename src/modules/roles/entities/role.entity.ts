@@ -1,7 +1,10 @@
-import { BaseEntity, Column, Entity, OneToMany } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
+import type { Relation } from 'typeorm';
+import { BaseEntity } from '../../../database/base.entity.js';
 import { StoreUser } from '../../stores/entities/store-user.entity.js';
 import { RolePermission } from './role-permission.entity.js';
-import { Channel } from '../enums/channel.enum.js';
+import { Channel } from '../../../common/enums/channel.enum.js';
+import { AdminUser } from '../../users/entities/admin-user.entity.js';
 
 @Entity('roles')
 export class Role extends BaseEntity {
@@ -18,8 +21,11 @@ export class Role extends BaseEntity {
   isActive: boolean;
 
   @OneToMany(() => StoreUser, (storeUser) => storeUser.role)
-  storeUsers: StoreUser[];
+  storeUsers: Relation<StoreUser[]>;
+  
+  @OneToMany(() => AdminUser, (adminUser) => adminUser.role)
+  adminRoles: Relation<AdminUser[]>;
 
   @OneToMany(() => RolePermission, (rolePermission) => rolePermission.role)
-  rolePermissions: RolePermission[];
+  rolePermissions: Relation<RolePermission[]>;
 }
